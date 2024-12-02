@@ -1,0 +1,626 @@
+/* ====================
+   Configuração l
+==================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f8fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+h1{
+    align-items: center;
+    text-align: center;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #0c4674;
+    box-shadow: 0 0 8px rgba(19, 112, 186, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.inserirImagem{
+    display: none;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    
+}
+
+.popup-options {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem; 
+    align-items: center;
+    justify-content: center; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.popup-options button, .button-fechar {
+    padding: 1rem;
+    font-size: 1.1rem; 
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(120deg, #1370ba, #0c4674);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    width: auto; 
+    max-width: 150px; 
+    text-align: center; 
+    
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.item-principal {
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+.acoes img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.acoes img:hover {
+    opacity: 0.7;
+}
+
+.itemAcao{
+background: none;
+border: none;
+}
+
+
+
+/* ====================
+   Cabeçalho
+==================== */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f4f4f4; 
+    border-bottom: 2px solid #ccc; 
+}
+
+.Logo, #logoScie {
+    width: 100px; 
+    height: auto;
+}
+
+#logoScie {
+    border-radius: 05px;
+}
+
+
+.header h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    font-family: Arial, sans-serif; 
+}
+
+
+/* ====================
+   Cabeçalho
+==================== */
+
+
+.form-container {
+    margin: 5vh auto;
+    padding: 30px;
+    background: linear-gradient(120deg, #90d1f0, #cceaf6);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    max-width: 600px;
+}
+
+
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #1370ba;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background: #f8f9fa;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #0c4674;
+}
+
+
+.file-name {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #0c4674;
+    font-style: italic;
+}
+
+#addItem {
+    width: 100vw;
+}
+
+/* ====================
+    Botões 
+==================== */
+.button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(120deg, #1370ba, #0c4674);
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(120deg, #0c4674, #1370ba);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.upload-button, .button-forms {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(120deg, #1370ba, #0c4674);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-button:hover {
+    background: linear-gradient(120deg, #0c4674, #1370ba);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ====================
+    Botões 
+==================== */
+
+
+
+
+/* ====================
+   Engenharia
+==================== */
+
+
+
+/* ---------------
+  Estoque
+--------------- */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(120deg, #90d1f0, #cceaf6);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #0c4674;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.grid-item span {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.grid-container-estoque {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* ---------------
+  Estoque
+--------------- */
+
+/* ---------------
+  Status
+--------------- */
+
+.status-button {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold; 
+}
+
+.status-em-estoque {
+    background-color: green;
+}
+
+.status-em-transito {
+    background-color: yellow;
+    color: #000; 
+}
+
+.status-button:hover {
+    opacity: 0.8; 
+}
+
+/* ---------------
+  Status
+--------------- */
+
+/* ====================
+   Engenharia
+==================== */
+
+
+
+
+/* ====================
+        Tabelas
+==================== */
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: linear-gradient(120deg, #cceaf6, #90d1f0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+table thead {
+    background: #1370ba;
+    color: white;
+    text-align: center;
+}
+
+table thead th {
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #0c4674;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #eef4fa;
+}
+
+table tbody tr:hover {
+    background-color: #d6eaf8;
+}
+
+table tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+}
+
+table tbody td img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+table tbody td img:hover {
+    transform: scale(1.2);
+}
+
+/* ====================
+        Tabelas
+==================== */
+
+
+
+/* ====================
+   Login
+==================== */
+
+#login{
+    width: 10vw;
+}
+
+#cxlogin, #cxadicionarItem {
+    margin-left: 40vw;
+    margin-top: 10vh;
+    align-items: center;
+    padding: 10vh;
+    background-color: #90d1f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#logoLogin{
+    max-width: 15vw;
+    max-height: 15vh;
+    margin-top: -5vh;
+    border-radius: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+#botaoLogin{
+    font-family: Handel Gothic BT,sans-serif;
+    background: linear-gradient(89deg, #0c4674 14.19%, #1370ba 82.74%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: Handel Gothic BT, sans-serif;
+    font-display: swap;
+    font-size: 2rem;
+    line-height: 120%;
+    margin-left: 1.4vw;
+    margin-top: 2vh;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease; 
+}
+
+#botaoLogin:hover {
+    background: linear-gradient(89deg, #1370ba 14.19%, #0c4674 82.74%);
+    color: white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* ====================
+   Login
+==================== */
+
+
+
+
+/* ====================
+   Histórico de movimentação do estoque
+==================== */
+#historico {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.historico-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.historico-table thead {
+    background-color: #1370ba;
+    color: #fff;
+}
+
+.historico-table th {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.historico-table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.historico-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.historico-table tbody tr:hover {
+    background-color: #eef4fa;
+}
+
+.historico-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.historico-table td:last-child {
+    text-align: left;
+    font-style: italic;
+    color: #666;
+}
+
+/* ====================
+   Histórico de movimentação do estoque
+==================== */
+
+
+
+
+/* ====================
+        TI
+==================== */
+
+#homeTI {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-top: 15%;
+    gap: 50px;
+}
+
+.grid-item-TI {
+    display: block; 
+    text-align: center;
+    padding: 50px;
+    background-color: #90d1f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; 
+    color: #1370ba; 
+    width: 350px;
+}
+
+.grid-item-TI:hover {
+    transform: scale(1.05);
+    background-color: #b0e1f9; 
+}
+
+.grid-item-TI img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.grid-item-TI span {
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+.grid-item-TI:hover span {
+    color: #0c4674; 
+}
+
+.btn-editar-usuario img {
+    width: 20px;
+    height: auto;
+}
+
+.btn-remover-usuario img {
+    width: 20px;
+    height: auto;
+}
+
+
+
+
+/* ====================
+         TI
+==================== */
+
+
+
+
+/* ====================
+   Feedback de ações
+==================== */
+
+#mensagem {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 600px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none; 
+}
+
+#mensagem.show {
+    display: block; 
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ====================
+   Feedback de ações
+==================== */
